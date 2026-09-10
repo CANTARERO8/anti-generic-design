@@ -1,0 +1,86 @@
+# Anti-Generic Design & Clean Code Skill
+
+Universal directives for eliminating AI design clichés, formulaic layouts, repetitive marketing copy, and redundant code comments.
+
+---
+
+## The Problem
+
+Large Language Models (LLMs) share predictable defaults when generating web interfaces and source code:
+1. **Artificial Ornaments:** Brackets `[ ]` surrounding titles, double slashes `//` used as stylistic dividers, floating dots `·`, fake telemetry readouts (`LAT/LONG`, `SIGNAL: 98%`), and left border callout bars (`border-left`) placed beside every paragraph.
+2. **Icon Spam & Cloned Cards:** Generic icons (rockets, gears, lightbulbs) placed in colored circles simply to fill space, alongside repetitive grids of white cards with exaggerated rounded corners (`rounded-3xl`) and fuzzy drop shadows.
+3. **Trite Copywriting:** Formulaic marketing filler (*"Empowering the future of..."*, *"Revolutionizing the way you..."*, *"Unlock the power of..."*) and twin generic action buttons (*"Get Started / Learn More"*).
+4. **Template Archetypes:** The ubiquitous three-column pricing grid with a glowing center card marked *"MOST POPULAR"*, infinite word marquees, and grayed-out fictional logo strips (*Acme Corp, Nova, Zenith*).
+5. **Comment Bloat:** Source code flooded with narrative descriptions of self-evident syntax (`// Set loading to true`), multi-line banner dividers (`// ====================`), and emojis in comments.
+
+---
+
+## What This Skill Enforces
+
+### Pillar 1: Prohibited Visual Sins (UI)
+* ❌ **Zero brackets `[ ]`** on headings, categories, phase numbers, or badges.
+* ❌ **Zero double slashes `//`** as decorative separators.
+* ❌ **Zero decorative dashes `-` / `—`** framing text.
+* ❌ **Zero floating dots `·` or background dot matrices**.
+* ❌ **Zero fake telemetry or cockpit styling** (`SIGNAL: 98%`, `LAT/LONG`).
+* ❌ **Zero vertical accent bars** (`border-left` callout pattern) beside text.
+* ❌ **Zero icon spam** as visual crutches in lists and grids.
+* ❌ **Zero cartoonish rounded corners** (`rounded-3xl` on large rectangular containers).
+* ❌ **Zero generic AI gradients** (purple-to-cyan) and fuzzy drop shadows.
+
+### Pillar 2: Anti-Cliché Copywriting
+* Bans hollow buzzword formulas (*"Empowering..."*, *"Revolutionizing..."*, *"Unlock..."*).
+* Bans twin generic buttons (*"Get Started / Learn More"*).
+* Requires concrete value in the first sentence, verifiable specifications, and descriptive action triggers (*"Browse collection"*, *"Download technical paper"*).
+
+### Pillar 3: Editorial Structure & Layouts
+* Bans cloned pricing grids, infinite word marquees, and fake logo strips.
+* **Ultra-wide hero headlines (2 to 3 lines max):** Headings breathe in broad containers (`max-w-5xl` or greater) rather than wrapping into 5 or 6 cramped lines.
+* **Generous vertical rhythm:** Sections treated as independent chapters (`py-24` to `py-40`).
+* **Refined architectural surfaces:** Precise 1px hairline dividers, balanced asymmetry, and intentional tonal contrast.
+
+### Pillar 4: Clean Code, Accessibility & Surgical Comments
+* Zero narrative comments explaining obvious syntax (`// Return user`, `// Handle click`).
+* Zero multi-line divider banners, ASCII frames, or decorative noise.
+* Zero emojis or graphic symbols (`🚀`, `✨`, `⚡`, `➔`, `✦`) in comments.
+* Zero generic mock placeholders (*"John Doe"*, *"Lorem ipsum"*).
+* Zero phantom event handlers (`onClick={() => console.log('click')}`).
+* Zero inaccessible div-soup: strict use of native semantic elements (`<button>`, `aria-label`, descriptive `alt` tags).
+* **Single-line surgical comments:** Concise explanations strictly addressing the non-obvious "why".
+
+---
+
+## Installation
+
+### Google Antigravity
+Clone or copy `SKILL.md` into your Antigravity skills directory:
+
+```bash
+mkdir -p ~/.gemini/config/skills/anti-generic-design
+cp SKILL.md ~/.gemini/config/skills/anti-generic-design/
+```
+
+### Cursor
+Add or reference `SKILL.md` directly in your project's `.cursorrules` or workspace rules.
+
+### Claude Code / Codex
+Include the contents of `SKILL.md` in your `CLAUDE.md` or system instructions to enforce editorial UI and clean code output across all sessions.
+
+---
+
+## Repository Structure
+
+```
+.
+├── SKILL.md          # Core skill instructions and pre-delivery checklist
+├── README.md         # Documentation and installation guide
+└── demo/             # Practical implementation demonstrating the directives
+    ├── index.html    # Editorial layout free of AI clichés
+    └── assets/       # Editorial vector artwork
+```
+
+---
+
+## License
+
+MIT
