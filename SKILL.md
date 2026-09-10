@@ -1,24 +1,25 @@
 ---
 name: anti-generic-design
-description: Universal rules to eliminate AI web design clichés (no brackets, no double slashes, no floating dots, no fake HUDs/telemetry, no left border bars, no icon spam) and enforce editorial UI with concise, non-generic, decoration-free code comments.
+description: Universal rules to eliminate AI clichés (no brackets, no double slashes, no floating dots, no fake HUDs/telemetry, no left border bars, no icon spam) and enforce editorial UI, clean frontend architecture, semantic HTML, and concise, decoration-free code comments.
 category: frontend
-tags: [design, ui-ux, clean-code, frontend, anti-ai-cliches, accessibility]
+tags: [frontend, ui-ux, clean-code, web-design, web-components, anti-ai-cliches, accessibility]
 tools: [claude, cursor, codex, copilot, windsurf, aider, antigravity]
 author: Eduardo Cordova
 license: MIT
 ---
 
-# THE ANTI-GENERIC GUIDE: EDITORIAL WEB DESIGN & CLEAN CODE
+# THE ANTI-GENERIC GUIDE: EDITORIAL FRONTEND & CLEAN UI
 
-This skill provides universal, mandatory directives to eradicate the predictable biases, formulaic layouts, and decorative noise that Large Language Models (LLMs) generate by default when designing interfaces and writing production code.
+This skill provides universal, mandatory directives to eradicate the predictable biases, formulaic layouts, decorative noise, and comment bloat that Large Language Models (LLMs) generate by default when building frontend applications, designing web interfaces, and writing production code.
 
 ---
 
 ## WHEN TO APPLY THIS SKILL
 
-- When creating or refactoring user interfaces, landing pages, components, or web applications.
+- When creating or refactoring frontend applications, web interfaces, landing pages, or modular UI components.
+- When writing frontend markup, styles, state management, event handling, or animations (HTML, CSS, Tailwind, JavaScript, TypeScript, React, Vue, Svelte).
 - When writing interface copy, microcopy, buttons, and calls to action.
-- When writing or reviewing code in any language (JavaScript, TypeScript, Python, CSS, HTML), ensuring technical clarity without narrative bloat.
+- When writing or reviewing code in any language, ensuring technical clarity without narrative bloat or div-soup.
 - Whenever the objective is an authentic, high-end, editorial standard that avoids the look and feel of a generic AI template.
 
 ---

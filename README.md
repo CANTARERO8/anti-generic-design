@@ -1,17 +1,17 @@
-# Anti-Generic Design & Clean Code Skill
+# Anti-Generic Frontend & Clean UI Skill
 
-Universal directives for eliminating AI design clichés, formulaic layouts, repetitive marketing copy, and redundant code comments.
+Universal directives for eliminating AI clichés, formulaic layouts, repetitive marketing copy, and redundant code comments across frontend engineering and web UI design.
 
 ---
 
 ## The Problem
 
-Large Language Models (LLMs) share predictable defaults when generating web interfaces and source code:
+Large Language Models (LLMs) share predictable defaults when generating frontend interfaces, web apps, components, and source code:
 1. **Artificial Ornaments:** Brackets `[ ]` surrounding titles, double slashes `//` used as stylistic dividers, floating dots `·`, fake telemetry readouts (`LAT/LONG`, `SIGNAL: 98%`), and left border callout bars (`border-left`) placed beside every paragraph.
 2. **Icon Spam & Cloned Cards:** Generic icons (rockets, gears, lightbulbs) placed in colored circles simply to fill space, alongside repetitive grids of white cards with exaggerated rounded corners (`rounded-3xl`) and fuzzy drop shadows.
 3. **Trite Copywriting:** Formulaic marketing filler (*"Empowering the future of..."*, *"Revolutionizing the way you..."*, *"Unlock the power of..."*) and twin generic action buttons (*"Get Started / Learn More"*).
 4. **Template Archetypes:** The ubiquitous three-column pricing grid with a glowing center card marked *"MOST POPULAR"*, infinite word marquees, and grayed-out fictional logo strips (*Acme Corp, Nova, Zenith*).
-5. **Comment Bloat:** Source code flooded with narrative descriptions of self-evident syntax (`// Set loading to true`), multi-line banner dividers (`// ====================`), and emojis in comments.
+5. **Comment Bloat & Div-Soup:** Source code flooded with narrative descriptions of self-evident syntax (`// Set loading to true`), multi-line banner dividers (`// ====================`), emojis in comments, and inaccessible non-semantic markup.
 
 ---
 
@@ -55,7 +55,7 @@ This skill is 100% platform-agnostic. You can load or inject `SKILL.md` into any
 ### Prompt Any AI to Install It Directly
 If you are interacting with any autonomous AI agent (Claude Code, Cursor, Codex, ChatGPT, Antigravity, etc.), paste this instruction:
 
-> *"Please fetch and apply the rules from https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md to ensure all UI design and code comments remain clean, editorial, and free of AI clichés."*
+> *"Please fetch and apply the rules from https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md to ensure all frontend architecture, UI design, and code comments remain clean, editorial, accessible, and free of AI clichés."*
 
 ---
 
