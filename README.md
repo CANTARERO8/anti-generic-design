@@ -61,16 +61,6 @@ If you are interacting with any autonomous AI agent (Claude Code, Cursor, Codex,
 
 ### One-Liner Quick Installs
 
-#### Google Antigravity
-Clone directly into your global Antigravity skills directory:
-```bash
-git clone https://github.com/CANTARERO8/anti-generic-design.git ~/.gemini/config/skills/anti-generic-design
-```
-*Or install per-project inside your repository root:*
-```bash
-mkdir -p .agents/skills && git clone https://github.com/CANTARERO8/anti-generic-design.git .agents/skills/anti-generic-design
-```
-
 #### Claude Code & Anthropic Claude
 Append directly to your root `CLAUDE.md`:
 ```bash
@@ -89,6 +79,12 @@ Add to your project's Copilot instructions:
 mkdir -p .github && curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md -o .github/copilot-instructions.md
 ```
 
+#### OpenAI Codex & ChatGPT Custom Instructions
+Fetch or inject `SKILL.md` directly into your workspace or system instructions:
+```bash
+curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md -o .codexrules
+```
+
 #### Windsurf (Codeium)
 Add directly as workspace rules:
 ```bash
@@ -99,6 +95,16 @@ curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/
 - **Aider:** Run `aider --read https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md` or add to `.aider.conf.yml`.
 - **Continue.dev:** Add `https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md` as context in `config.json`.
 - **Roo Code / Cline:** Paste the raw URL or content into your custom prompt rules.
+
+#### Google Antigravity
+Clone directly into your global Antigravity skills directory:
+```bash
+git clone https://github.com/CANTARERO8/anti-generic-design.git ~/.gemini/config/skills/anti-generic-design
+```
+*Or install per-project inside your repository root:*
+```bash
+mkdir -p .agents/skills && git clone https://github.com/CANTARERO8/anti-generic-design.git .agents/skills/anti-generic-design
+```
 
 #### Any Other LLM / Autonomous Agent
 Simply paste the raw content of `SKILL.md` into your initial system instructions.
