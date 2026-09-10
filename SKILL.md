@@ -45,12 +45,14 @@ LLMs frequently rely on pseudo-technical ornaments to feign complexity. The foll
 - **Correct:** Direct, unadorned headings.
   - ✅ `Our vision`, `Technology`
 
-### ❌ 4. Zero Floating Dots `·` or Decorative Dot Grids
-- **Forbidden:** Concatenating keywords with floating middle dots or using repetitive AI dot-matrix background patterns.
-  - ❌ `DESIGN · STRATEGY · DEVELOPMENT · SCALE`
-  - ❌ Artificial background dot grids used as generic filler.
-- **Correct:** Fluid prose, semantic lists, or discrete individual tags with proper layout spacing.
-  - ✅ `Design`, `Strategy`, `Development` in standalone badges or structured sentences.
+### ❌ 4. Zero Floating Dots, Bullet Points, and Circular Status/Indicator Dots
+- **Forbidden:**
+  - **Zero Circular Status Dots or Indicator Dots:** NEVER place circular dots (`<span class="dot"></span>`, `<span class="indicator"></span>`, `border-radius: 50%`) beside buttons, status badges, capsules, pills, or state labels (e.g., `● Active`, `● Offline`, `● Live`, `● Operational`, `● Enabled`, `<span class="status-indicator"></span>`). Never simulate hardware LEDs or IoT status beacons on web UI. Communicate system or element state purely through typography, border contrast, subtle background tint, or opacity—never with a dot.
+  - **Zero Bullet Points or Middle Dots:** NEVER use HTML bullet entities or symbols (`&bull;`, `•`, `·`, `●`, `◦`) between words, in inline metadata, or in navigation (e.g., `Enterprise &bull; v2.4`, `Item • Price`, `DESIGN · STRATEGY`).
+  - **Zero Decorative Dot Grids:** Never use artificial background dot matrices as filler.
+- **Correct:** Direct typography, natural punctuation (commas, clean hierarchy, negative space), and semantic lists without pseudo-dots.
+  - ✅ `Operational` or `Offline` displayed inside a subtle outlined badge with typographic weight and contrast (zero dot).
+  - ✅ `Version 2.4, Production` (clean comma and spacing, zero bullets).
 
 ### ❌ 5. Zero Fake Telemetry or Sci-Fi HUD Clichés
 - **Forbidden:** Inventing fictional coordinates (`LAT / LONG`), arbitrary signal levels (`SIGNAL: 98.4%`), fake system statuses (`SYSTEM_STATUS: OK`, `INITIALIZING CORE...`), or military cockpit styling on standard commercial or product websites.
@@ -205,7 +207,8 @@ if (rendererRef.current) return;
 Before completing any frontend task or submitting code, verify each item:
 - [ ] Are there decorative brackets `[ ]` in text, badges, or kickers? -> **Remove.**
 - [ ] Are there double slashes `//` or decorative dashes in titles? -> **Remove.**
-- [ ] Are there floating dots `·` or fake telemetry metrics? -> **Remove.**
+- [ ] Are there floating dots `·`, bullet points (`•`, `&bull;`), or circular status/indicator dots next to buttons or labels? -> **Remove.**
+- [ ] Are there fake telemetry metrics or sci-fi status indicators? -> **Remove.**
 - [ ] Are there vertical left lines (`border-left`) beside text blocks? -> **Remove.**
 - [ ] Are there decorative icon crutches inside lists or cards? -> **Remove.**
 - [ ] Is there generic AI marketing copy ("Empowering...", "Get Started / Learn More")? -> **Rewrite with tangible value.**

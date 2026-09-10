@@ -21,7 +21,7 @@ Large Language Models (LLMs) share predictable defaults when generating web inte
 * ❌ **Zero brackets `[ ]`** on headings, categories, phase numbers, or badges.
 * ❌ **Zero double slashes `//`** as decorative separators.
 * ❌ **Zero decorative dashes `-` / `—`** framing text.
-* ❌ **Zero floating dots `·` or background dot matrices**.
+* ❌ **Zero floating dots, bullet points (`•`, `&bull;`), and circular status/indicator dots** beside buttons, tags, or pills (communicate state purely through typography, border contrast, or subtle tint).
 * ❌ **Zero fake telemetry or cockpit styling** (`SIGNAL: 98%`, `LAT/LONG`).
 * ❌ **Zero vertical accent bars** (`border-left` callout pattern) beside text.
 * ❌ **Zero icon spam** as visual crutches in lists and grids.
