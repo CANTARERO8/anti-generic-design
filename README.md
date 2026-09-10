@@ -116,6 +116,8 @@ Simply paste the contents of `SKILL.md` as part of the initial system prompt or 
 
 ---
 
-## License
+## Author & License
 
-MIT
+Created and authored by **Eduardo Cordova** ([@CANTARERO8](https://github.com/CANTARERO8)).
+
+Released under the [MIT License](LICENSE).

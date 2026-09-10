@@ -4,6 +4,8 @@ description: Universal rules to eliminate AI web design clichés (no brackets, n
 category: frontend
 tags: [design, ui-ux, clean-code, frontend, anti-ai-cliches, accessibility]
 tools: [claude, cursor, codex, copilot, windsurf, aider, antigravity]
+author: Eduardo Cordova
+license: MIT
 ---
 
 # THE ANTI-GENERIC GUIDE: EDITORIAL WEB DESIGN & CLEAN CODE
