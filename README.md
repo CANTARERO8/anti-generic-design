@@ -1,6 +1,6 @@
-# Anti-Generic Frontend & Clean UI Skill
+# Anti-Generic Web & Frontend Design Skill
 
-Universal directives for eliminating AI clichés, formulaic layouts, repetitive marketing copy, and redundant code comments across frontend engineering and web UI design.
+Universal directives for eliminating AI clichés, formulaic layouts, repetitive marketing copy, and redundant code comments across web design, frontend engineering, and clean UI architecture.
 
 ---
 

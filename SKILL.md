@@ -8,9 +8,9 @@ author: Eduardo Cordova
 license: MIT
 ---
 
-# THE ANTI-GENERIC GUIDE: EDITORIAL FRONTEND & CLEAN UI
+# THE ANTI-GENERIC GUIDE: EDITORIAL WEB DESIGN & FRONTEND ENGINEERING
 
-This skill provides universal, mandatory directives to eradicate the predictable biases, formulaic layouts, decorative noise, and comment bloat that Large Language Models (LLMs) generate by default when building frontend applications, designing web interfaces, and writing production code.
+This skill provides universal, mandatory directives to eradicate the predictable biases, formulaic layouts, decorative noise, and comment bloat that Large Language Models (LLMs) generate by default when designing web interfaces, building frontend applications, and writing production code.
 
 ---
 
