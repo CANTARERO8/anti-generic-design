@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paws & Whiskers — The Sanctuary of Puppies and Kittens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Fraunces', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Duo Mode (Default) */
+      --color-bg: #FAF7F2;
+      --color-surface: #FFFFFF;
+      --color-card: #F4EFE6;
+      --color-primary: #D95D39;
+      --color-secondary: #E09F3E;
+      --color-text: #2B2623;
+      --color-muted: #736B63;
+      --color-accent-glow: rgba(217, 93, 57, 0.12);
+      --border-subtle: rgba(43, 38, 35, 0.08);
+      --hero-overlay: linear-gradient(180deg, rgba(250, 247, 242, 0) 0%, #FAF7F2 100%);
+      
+      --transition-mode: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    }
+
+    /* Dynamic Themes */
+    body.mode-dogs {
+      --color-bg: #FFF9F2;
+      --color-surface: #FFFFFF;
+      --color-card: #FCEFD9;
+      --color-primary: #D45B28;
+      --color-secondary: #F39C12;
+      --color-text: #2C2219;
+      --color-muted: #7C6856;
+      --color-accent-glow: rgba(212, 91, 40, 0.15);
+      --border-subtle: rgba(212, 91, 40, 0.12);
+      --hero-overlay: linear-gradient(180deg, rgba(255, 249, 242, 0) 0%, #FFF9F2 100%);
+    }
+
+    body.mode-cats {
+      --color-bg: #F4F3F7;
+      --color-surface: #FFFFFF;
+      --color-card: #E8E5EE;
+      --color-primary: #6B5B95;
+      --color-secondary: #E0876A;
+      --color-text: #211C2B;
+      --color-muted: #665D75;
+      --color-accent-glow: rgba(107, 91, 149, 0.15);
+      --border-subtle: rgba(107, 91, 149, 0.12);
+      --hero-overlay: linear-gradient(180deg, rgba(244, 243, 247, 0) 0%, #F4F3F7 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      transition: var(--transition-mode);
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Paw Trail on Click */
+    .paw-click {
+      position: fixed;
+      pointer-events: none;
+      width: 28px;
+      height: 28px;
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0.7;
+      animation: pawFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      z-index: 9999;
+      fill: var(--color-primary);
+    }
+
+    @keyframes pawFade {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(var(--rot, 0deg));
+        opacity: 0.8;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1) rotate(var(--rot, 0deg));
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(-50%, -60px) scale(1) rotate(var(--rot, 0deg));
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4.8rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--color-text);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Mode Switcher */
+    .mode-switch-wrapper {
+      display: flex;
+      align-items: center;
+      background: var(--color-card);
+      padding: 0.35rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    .mode-btn {
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.25s ease;
+    }
+
+    .mode-btn.active {
+      background: var(--color-surface);
+      color: var(--color-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent-glow);
+      color: var(--color-primary);
+      padding: 0.45rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--color-text);
+      max-width: 54rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-title span {
+      color: var(--color-primary);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-muted);
+      max-width: 40rem;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-primary {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 0.95rem 2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 10px 24px var(--color-accent-glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px var(--color-accent-glow);
+    }
+
+    .cta-sound {
+      background: var(--color-surface);
+      color: var(--color-text);
+      border: 1px solid var(--border-subtle);
+      padding: 0.95rem 1.75rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease;
+    }
+
+    .cta-sound:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero Visual Card */
+    .hero-visual-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      max-width: 1040px;
+      margin: 0 auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-subtle);
+      background: var(--color-card);
+      aspect-ratio: 16 / 9;
+    }
+
+    .hero-visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .hero-visual-card img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    /* Superpowers Section */
+    .section-features {
+      padding: 7rem 0 5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 38rem;
+      margin: 0 auto 4rem;
+    }
+
+    .section-tag {
+      color: var(--color-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.25rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px var(--color-accent-glow);
+    }
+
+    .card-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--color-text);
+    }
+
+    .card-body {
+      color: var(--color-muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    /* Secret Behavior Decoder */
+    .section-translator {
+      padding: 6rem 0;
+      background: var(--color-card);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .translator-box {
+      background: var(--color-surface);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.05);
+    }
+
+    .question-tabs {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .tab-pill {
+      background: var(--color-bg);
+      border: 1px solid var(--border-subtle);
+      color: var(--color-text);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-pill.active {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+      box-shadow: 0 6px 16px var(--color-accent-glow);
+    }
+
+    .decoder-result {
+      background: var(--color-bg);
+      border-radius: 18px;
+      padding: 2.25rem;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .decoder-emoji {
+      font-size: 3.5rem;
+      line-height: 1;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+    }
+
+    .decoder-info h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 0.4rem;
+    }
+
+    .decoder-info p {
+      color: var(--color-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Personality Gallery */
+    .section-gallery {
+      padding: 7rem 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .gallery-item {
+      background: var(--color-surface);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-img-wrapper {
+      height: 380px;
+      overflow: hidden;
+      background: var(--color-card);
+    }
+
+    .gallery-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .gallery-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .gallery-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--color-text);
+    }
+
+    .gallery-desc {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-val {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-text);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-desc {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      max-width: 32rem;
+      margin: 0 auto 2rem;
+    }
+
+    .footer-heart {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    @media (max-width: 900px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .decoder-result {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-content {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation with Interactive Pet Switcher -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand-logo">
+        <span style="font-size: 1.6rem;">🐾</span>
+        <span class="brand-title">Paws & Whiskers</span>
+      </a>
+
+      <!-- Mode Selector: Puppies / Kittens / Both -->
+      <div class="mode-switch-wrapper" role="radiogroup" aria-label="Preferred pet selector">
+        <button class="mode-btn active" data-mode="duo" aria-checked="true">
+          <span>🐾</span> Both
+        </button>
+        <button class="mode-btn" data-mode="dogs" aria-checked="false">
+          <span>🐶</span> Puppies
+        </button>
+        <button class="mode-btn" data-mode="cats" aria-checked="false">
+          <span>🐱</span> Kittens
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dynamic Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge" id="heroBadge">
+        <span>✨</span> Pure unconditional friendship
+      </div>
+      
+      <h1 class="hero-title" id="heroTitle">
+        Tail-wagging loyalty and <span>purrs that heal the heart</span>
+      </h1>
+      
+      <p class="hero-subtitle" id="heroSubtitle">
+        Two complementary worlds bringing daily warmth, serene calm, and boundless affection to every home.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#decoder" class="cta-primary">
+          <span>💡</span> Decode their language
+        </a>
+        <button class="cta-sound" id="btnSound" aria-label="Play soothing purr sound">
+          <span id="soundIcon">🔊</span> <span id="soundText">Listen to relaxing purr</span>
+        </button>
+      </div>
+
+      <!-- Crossfade Interactive Visual Frame -->
+      <div class="hero-visual-card">
+        <img src="assets/duo.jpg" alt="Dog and cat resting peacefully together" class="active" id="imgDuo">
+        <img src="assets/dog.jpg" alt="Illustrated portrait of a noble and loyal hound" id="imgDogs">
+        <img src="assets/cat.jpg" alt="Illustrated portrait of a serene and graceful feline" id="imgCats">
+      </div>
+    </div>
+  </header>
+
+  <!-- Superpowers Section -->
+  <section class="section-features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" id="featuresTag">Natural Superpowers</span>
+        <h2 class="section-heading" id="featuresTitle">Why they brighten our everyday lives</h2>
+        <p style="color: var(--color-muted);">Far more than companion animals: true guardians of warmth, joy, and peace.</p>
+      </div>
+
+      <div class="feature-grid" id="featureGrid">
+        <article class="feature-card">
+          <div class="card-number">01</div>
+          <h3 class="card-title">The Purr Therapy</h3>
+          <p class="card-body">
+            Feline purring frequencies (between 20 and 140 Hz) are clinically shown to lower stress in humans, support bone density repair, and induce deep, soothing calm.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="card-number">02</div>
+          <h3 class="card-title">Boundless Canine Empathy</h3>
+          <p class="card-body">
+            Dogs release oxytocin in both themselves and humans through simple eye contact, gently synchronizing their heartbeat with their human family.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="card-number">03</div>
+          <h3 class="card-title">Living in the Present</h3>
+          <p class="card-body">
+            Both dogs and cats guide us away from screen fatigue, teaching us to savor morning sunbeams, lively strolls, and restorative naps.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secret Behavior Decoder -->
+  <section class="section-translator" id="decoder">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Secret Decoder</span>
+        <h2 class="section-heading">What is your pet telling you?</h2>
+        <p style="color: var(--color-muted);">Click any behavior below to discover its true instinctual meaning.</p>
+      </div>
+
+      <div class="translator-box">
+        <div class="question-tabs">
+          <button class="tab-pill active" data-behavior="knead">Cat: Making biscuits (kneading)</button>
+          <button class="tab-pill" data-behavior="sneeze">Dog: Playful sneezing</button>
+          <button class="tab-pill" data-behavior="tail-hook">Cat: Question-mark curved tail</button>
+          <button class="tab-pill" data-behavior="bow">Dog: Play bow with wagging tail</button>
+          <button class="tab-pill" data-behavior="slow-blink">Cat: Slow and steady blinking</button>
+        </div>
+
+        <div class="decoder-result" id="decoderResult">
+          <div class="decoder-emoji" id="decoderEmoji">🍞</div>
+          <div class="decoder-info">
+            <h4 id="decoderTitle">Making biscuits with front paws (Cat)</h4>
+            <p id="decoderText">
+              A comforting sensory memory from early nursing days. It signals absolute trust, profound contentment, and feeling deeply safe in your presence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personality Portraits -->
+  <section class="section-gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Personality Portraits</span>
+        <h2 class="section-heading">Two magical ways of loving</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-item">
+          <div class="gallery-img-wrapper">
+            <img src="assets/dog.jpg" alt="Noble canine portrait illustration">
+          </div>
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-tag">The Devoted Enthusiast</span>
+              <h3 class="gallery-title">The Canine Spirit</h3>
+              <p class="gallery-desc">
+                Always eager for the next adventure, celebrating your return like a grand reunion, and finding purest bliss in shared company and playful games.
+              </p>
+            </div>
+            <div class="stat-row">
+              <div>
+                <div class="stat-label">Energy Level</div>
+                <div class="stat-val">Expansive ⚡</div>
+              </div>
+              <div>
+                <div class="stat-label">Attachment Style</div>
+                <div class="stat-val">Steadfast Friend 💛</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item">
+          <div class="gallery-img-wrapper">
+            <img src="assets/cat.jpg" alt="Serene feline portrait illustration">
+          </div>
+          <div class="gallery-content">
+            <div>
+              <span class="gallery-tag">The Quiet Philosopher</span>
+              <h3 class="gallery-title">The Feline Grace</h3>
+              <p class="gallery-desc">
+                A discerning master of comfort who chooses your company freely, transforming any patch of sunlight into a sanctuary of peaceful contemplation.
+              </p>
+            </div>
+            <div class="stat-row">
+              <div>
+                <div class="stat-label">Energy Level</div>
+                <div class="stat-val">Calm & Stalking 🌿</div>
+              </div>
+              <div>
+                <div class="stat-label">Attachment Style</div>
+                <div class="stat-val">Intimate Trust 💜</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">🐾 Paws & Whiskers</div>
+      <p class="footer-desc">
+        Dedicated to every dog and cat that greets us at the door and fills our lives with unconditional warmth.
+      </p>
+      <div class="footer-heart">
+        Crafted with creative freedom and animal affection • 2026
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Web Audio Synthesizer for Soothing Feline Purr
+    let audioCtx = null;
+    let isPlaying = false;
+    let purrNodes = [];
+
+    function togglePurrSound() {
+      const soundText = document.getElementById('soundText');
+      const soundIcon = document.getElementById('soundIcon');
+
+      if (isPlaying) {
+        stopPurr();
+        soundText.textContent = 'Listen to relaxing purr';
+        soundIcon.textContent = '🔊';
+        isPlaying = false;
+        return;
+      }
+
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      // Purr synthesis: dual oscillator with rhythmic low-frequency modulation
+      const osc = audioCtx.createOscillator();
+      const lfo = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const lfoGain = audioCtx.createGain();
+      const filter = audioCtx.createBiquadFilter();
+
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(28, audioCtx.currentTime);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(140, audioCtx.currentTime);
+
+      lfo.type = 'sine';
+      lfo.frequency.setValueAtTime(24, audioCtx.currentTime);
+      lfoGain.gain.setValueAtTime(0.5, audioCtx.currentTime);
+
+      lfo.connect(lfoGain);
+      lfoGain.connect(gain.gain);
+
+      gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start();
+      lfo.start();
+
+      purrNodes = [osc, lfo, gain, filter];
+      isPlaying = true;
+      soundText.textContent = 'Pause purr';
+      soundIcon.textContent = '⏸️';
+    }
+
+    function stopPurr() {
+      purrNodes.forEach(node => {
+        try { node.stop ? node.stop() : node.disconnect(); } catch (e) {}
+      });
+      purrNodes = [];
+    }
+
+    document.getElementById('btnSound').addEventListener('click', togglePurrSound);
+
+    // Interactive Mode Switcher (Puppies / Kittens / Both)
+    const modeButtons = document.querySelectorAll('.mode-btn');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const heroBadge = document.getElementById('heroBadge');
+    const imgDuo = document.getElementById('imgDuo');
+    const imgDogs = document.getElementById('imgDogs');
+    const imgCats = document.getElementById('imgCats');
+
+    const modeContent = {
+      duo: {
+        badge: '✨ Pure unconditional friendship',
+        title: 'Tail-wagging loyalty and <span>purrs that heal the heart</span>',
+        subtitle: 'Two complementary worlds bringing daily warmth, serene calm, and boundless affection to every home.',
+        imgActive: imgDuo
+      },
+      dogs: {
+        badge: '🐶 Realm of Joy & Devotion',
+        title: 'Four-legged hearts full of <span>boundless enthusiasm</span>',
+        subtitle: 'Greeting every morning with unbridled joy, ready for every adventure, and always faithful by your side.',
+        imgActive: imgDogs
+      },
+      cats: {
+        badge: '🐱 Sanctuary of Calm & Wonder',
+        title: 'Silent grace and purrs that <span>soothe the soul</span>',
+        subtitle: 'Masters of comfort, sunbeam connoisseurs, offering selective trust that once given, lasts forever.',
+        imgActive: imgCats
+      }
+    };
+
+    modeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        
+        modeButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-checked', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-checked', 'true');
+
+        // Update body theme classes
+        document.body.className = '';
+        if (mode !== 'duo') {
+          document.body.classList.add(`mode-${mode}`);
+        }
+
+        // Update hero copy
+        const cfg = modeContent[mode];
+        heroBadge.innerHTML = cfg.badge;
+        heroTitle.innerHTML = cfg.title;
+        heroSubtitle.textContent = cfg.subtitle;
+
+        // Image crossfade
+        [imgDuo, imgDogs, imgCats].forEach(img => img.classList.remove('active'));
+        cfg.imgActive.classList.add('active');
+      });
+    });
+
+    // Instinctual Behavior Decoder
+    const behaviors = {
+      knead: {
+        emoji: '🍞',
+        title: 'Making biscuits with front paws (Cat)',
+        desc: 'A comforting sensory memory from early nursing days. It signals absolute trust, profound contentment, and feeling deeply safe in your presence.'
+      },
+      sneeze: {
+        emoji: '🐕',
+        title: 'Playful sneezing during games (Dog)',
+        desc: 'A communicative calming signal. Your dog is saying: "We are having the best time, this is purely fun, and I have zero aggressive intent!"'
+      },
+      'tail-hook': {
+        emoji: '🐈',
+        title: 'Question-mark curved upright tail (Cat)',
+        desc: 'The ultimate feline greeting. It signals cheerful curiosity, an open invitation to interact, and warm friendly affection.'
+      },
+      bow: {
+        emoji: '🎾',
+        title: 'Play bow with chest down and tail high (Dog)',
+        desc: 'The universal canine invitation to fun. Your dog is brimming with cheerful energy and inviting you to sprint, fetch, and play.'
+      },
+      'slow-blink': {
+        emoji: '👁️',
+        title: 'Slow and steady blinking (Cat)',
+        desc: 'Known affectionately as the "feline kiss." Closing eyes slowly in front of you expresses complete vulnerability and unwavering trust.'
+      }
+    };
+
+    const tabPills = document.querySelectorAll('.tab-pill');
+    const decoderEmoji = document.getElementById('decoderEmoji');
+    const decoderTitle = document.getElementById('decoderTitle');
+    const decoderText = document.getElementById('decoderText');
+
+    tabPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        tabPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const key = pill.dataset.behavior;
+        const item = behaviors[key];
+        
+        decoderEmoji.textContent = item.emoji;
+        decoderTitle.textContent = item.title;
+        decoderText.textContent = item.desc;
+      });
+    });
+
+    // Floating Paw-prints on click anywhere
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('button, a')) return;
+
+      const paw = document.createElement('div');
+      paw.className = 'paw-click';
+      paw.style.left = `${e.clientX}px`;
+      paw.style.top = `${e.clientY}px`;
+      
+      const randomRot = Math.floor(Math.random() * 60) - 30;
+      paw.style.setProperty('--rot', `${randomRot}deg`);
+
+      paw.innerHTML = `
+        <svg viewBox="0 0 24 24">
+          <circle cx="7.5" cy="5.5" r="2.5"/>
+          <circle cx="16.5" cy="5.5" r="2.5"/>
+          <circle cx="3.5" cy="11.5" r="2.2"/>
+          <circle cx="20.5" cy="11.5" r="2.2"/>
+          <path d="M12 11.5c-3.2 0-6 2.2-6 5.5 0 2.2 2 4 4.5 4 1 0 1.2-.5 1.5-.5s.5.5 1.5.5c2.5 0 4.5-1.8 4.5-4 0-3.3-2.8-5.5-6-5.5z"/>
+        </svg>
+      `;
+
+      document.body.appendChild(paw);
+      setTimeout(() => paw.remove(), 800);
+    });
+  </script>
+</body>
+</html>
