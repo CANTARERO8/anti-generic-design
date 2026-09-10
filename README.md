@@ -52,54 +52,56 @@ Large Language Models (LLMs) share predictable defaults when generating web inte
 
 This skill is 100% platform-agnostic. You can load or inject `SKILL.md` into any AI coding assistant, agentic workflow, or LLM system prompt to instantly enforce clean editorial UI and eliminate generic code habits.
 
-### Claude Code & Anthropic Claude
-Add the contents of `SKILL.md` to your root `CLAUDE.md` or import it in your project instructions:
+### Prompt Any AI to Install It Directly
+If you are interacting with any autonomous AI agent (Claude Code, Cursor, Codex, ChatGPT, Antigravity, etc.), paste this instruction:
 
+> *"Please fetch and apply the rules from https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md to ensure all UI design and code comments remain clean, editorial, and free of AI clichés."*
+
+---
+
+### One-Liner Quick Installs
+
+#### Google Antigravity
+Clone directly into your global Antigravity skills directory:
 ```bash
-cat SKILL.md >> CLAUDE.md
+git clone https://github.com/CANTARERO8/anti-generic-design.git ~/.gemini/config/skills/anti-generic-design
+```
+*Or install per-project inside your repository root:*
+```bash
+mkdir -p .agents/skills && git clone https://github.com/CANTARERO8/anti-generic-design.git .agents/skills/anti-generic-design
 ```
 
-### Cursor
-Add or reference `SKILL.md` in your project's `.cursorrules` or inside `.cursor/rules/anti-generic.mdc`:
-
+#### Claude Code & Anthropic Claude
+Append directly to your root `CLAUDE.md`:
 ```bash
-mkdir -p .cursor/rules
-cp SKILL.md .cursor/rules/anti-generic.mdc
+curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md >> CLAUDE.md
 ```
 
-### Codex & OpenAI
-Include `SKILL.md` directly in your custom system instructions, GPT profile, or project knowledge files.
-
-### GitHub Copilot
-Add this file to your repository's Copilot instructions:
-
+#### Cursor
+Save into `.cursor/rules` as an active rule:
 ```bash
-mkdir -p .github
-cp SKILL.md .github/copilot-instructions.md
+mkdir -p .cursor/rules && curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md -o .cursor/rules/anti-generic.mdc
 ```
 
-### Windsurf (Codeium)
-Add `SKILL.md` to your `.windsurfrules` file in the workspace root:
-
+#### GitHub Copilot
+Add to your project's Copilot instructions:
 ```bash
-cp SKILL.md .windsurfrules
+mkdir -p .github && curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md -o .github/copilot-instructions.md
 ```
 
-### Aider, Continue.dev & Roo Code
-- **Aider:** Run `aider --read SKILL.md` or add `read: [SKILL.md]` to your `.aider.conf.yml`.
-- **Continue.dev:** Add `SKILL.md` as a custom slash command or context provider in `config.json`.
-- **Roo Code / Cline:** Paste `SKILL.md` into your custom instructions or workspace prompt rules.
-
-### Google Antigravity
-Copy `SKILL.md` into your Antigravity skills configuration directory:
-
+#### Windsurf (Codeium)
+Add directly as workspace rules:
 ```bash
-mkdir -p ~/.gemini/config/skills/anti-generic-design
-cp SKILL.md ~/.gemini/config/skills/anti-generic-design/
+curl -sSL https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md -o .windsurfrules
 ```
 
-### Any Other LLM / Autonomous Agent
-Simply paste the contents of `SKILL.md` as part of the initial system prompt or reference it during prompt orchestration.
+#### Aider, Continue.dev & Roo Code
+- **Aider:** Run `aider --read https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md` or add to `.aider.conf.yml`.
+- **Continue.dev:** Add `https://raw.githubusercontent.com/CANTARERO8/anti-generic-design/main/SKILL.md` as context in `config.json`.
+- **Roo Code / Cline:** Paste the raw URL or content into your custom prompt rules.
+
+#### Any Other LLM / Autonomous Agent
+Simply paste the raw content of `SKILL.md` into your initial system instructions.
 
 ---
 
