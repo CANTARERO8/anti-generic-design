@@ -105,15 +105,31 @@ Simply paste the raw content of `SKILL.md` into your initial system instructions
 
 ---
 
+## Comparison Demos
+
+The repository includes two live examples generated from the exact same prompt to demonstrate the difference:
+
+- **[`demo/with-skill/`](demo/with-skill/)**: Generated with `anti-generic-design` enabled. Uses editorial typography, high-contrast layouts, clean biological and adoption metrics, and code free of decorative comments.
+- **[`demo/without-skill/`](demo/without-skill/)**: Generated without any skill. Exhibits common AI defaults: ambient glows, icon/emoji decorations, stat gauges, and generic cards.
+
+---
+
 ## Repository Structure
 
 ```
 .
-├── SKILL.md          # Core skill instructions and pre-delivery checklist
-├── README.md         # Documentation and installation guide
-└── demo/             # Practical implementation demonstrating the directives
-    ├── index.html    # Editorial layout free of AI clichés
-    └── assets/       # Editorial vector artwork
+├── SKILL.md            # Core skill instructions and pre-delivery checklist
+├── README.md           # Documentation and installation guide
+├── LICENSE             # MIT License (Eduardo Cordova)
+└── demo/
+    ├── with-skill/     # Example generated with anti-generic-design
+    │   ├── index.html
+    │   ├── styles.css
+    │   └── app.js
+    └── without-skill/  # Baseline example generated with standard AI defaults
+        ├── index.html
+        ├── styles.css
+        └── app.js
 ```
 
 ---

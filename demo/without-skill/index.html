@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patitas & Bigotes | Refugio de Perritos y Gatitos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-emoji">🐾</span>
+        <div>
+          <h1>Patitas &amp; Bigotes</h1>
+          <p class="tagline">Historias, caricias y compañeros incondicionales</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="sound-toggle-btn" class="pill-btn sound-btn" title="Efectos de sonido interactivos">
+          <span class="btn-icon" id="sound-icon">🔊</span>
+          <span id="sound-label">Sonido activado</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-kicker">Compañeros de cuatro patas</span>
+        <h2>Los mejores amigos de tu vida tienen bigotes y colita</h2>
+        <p>Explora nuestra selección de cachorritos enérgicos y mininos curiosos listos para alegrarte el día con ronroneos y lengüetazos.</p>
+      </div>
+
+      <div class="curiosity-card">
+        <div class="curiosity-header">
+          <span class="curiosity-badge">¿Sabías qué?</span>
+          <button id="next-fact-btn" class="mini-btn">Siguiente curiosidad</button>
+        </div>
+        <p id="fact-text" class="fact-text">Cargando curiosidad especial...</p>
+      </div>
+    </section>
+
+    <section class="controls-section">
+      <div class="search-container">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="search-input" placeholder="Buscar por nombre, raza o personalidad...">
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">Todos los amigos</button>
+        <button class="filter-btn" data-filter="perrito">Perritos 🐕</button>
+        <button class="filter-btn" data-filter="gatito">Gatitos 🐈</button>
+        <button class="filter-btn" data-filter="favs">Mis Favoritos ❤️</button>
+      </div>
+    </section>
+
+    <div class="active-count-bar">
+      <span id="results-count">Mostrando amigos peludos</span>
+    </div>
+
+    <section id="pets-grid" class="pets-grid">
+      <!-- Tarjetas renderizadas dinámicamente con app.js -->
+    </section>
+
+    <section class="interactive-soundboard">
+      <div class="soundboard-header">
+        <h3>Rincón de Mimos Interactivos</h3>
+        <p>Presiona los botones para escuchar cariños sintetizados en tiempo real con Web Audio.</p>
+      </div>
+      <div class="soundboard-buttons">
+        <button id="btn-woof" class="action-btn bark-btn">
+          <span class="action-emoji">🐶</span>
+          <span>¡Ladrido juguetón!</span>
+        </button>
+        <button id="btn-purr" class="action-btn meow-btn">
+          <span class="action-emoji">🐱</span>
+          <span>¡Ronroneo y miau!</span>
+        </button>
+        <button id="btn-pat" class="action-btn treat-btn">
+          <span class="action-emoji">🍖</span>
+          <span>¡Dar un premio!</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Detallado -->
+  <div id="pet-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">&times;</button>
+      <div class="modal-body" id="modal-content">
+        <!-- Inyectado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Hecho con amor y respeto animal • Patitas &amp; Bigotes</p>
+    <p class="footer-subtext">Adopta, esteriliza y cuida con responsabilidad a tus mascotas de por vida.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
