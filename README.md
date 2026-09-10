@@ -107,10 +107,20 @@ Simply paste the raw content of `SKILL.md` into your initial system instructions
 
 ## Comparison Demos
 
-The repository includes two live examples generated from the exact same prompt to demonstrate the difference:
+The repository includes two real-world examples generated from the exact same prompt to demonstrate the difference:
 
-- **[`demo/with-skill/`](demo/with-skill/)**: Generated with `anti-generic-design` enabled. Uses editorial typography, high-contrast layouts, clean biological and adoption metrics, and code free of decorative comments.
-- **[`demo/without-skill/`](demo/without-skill/)**: Generated without any skill. Exhibits common AI defaults: ambient glows, icon/emoji decorations, stat gauges, and generic cards.
+### 1. Default AI Output (Without Skill)
+Common AI defaults: ambient glows, emoji badges, playful/toyish clichés, and card clutter.
+
+![Default AI Output without Skill](assets/img/without-skill.png)
+
+### 2. Output with `anti-generic-design`
+Editorial typography, dignified palette, architectural layout, clean metrics, zero cliché ornaments, and disciplined code.
+
+![Editorial Output with Skill](assets/img/with-skill.png)
+
+- **[`demo/with-skill/`](demo/with-skill/)**: Live code with `anti-generic-design` enabled.
+- **[`demo/without-skill/`](demo/without-skill/)**: Baseline code with default AI behavior.
 
 ---
 
@@ -121,6 +131,8 @@ The repository includes two live examples generated from the exact same prompt t
 ├── SKILL.md            # Core skill instructions and pre-delivery checklist
 ├── README.md           # Documentation and installation guide
 ├── LICENSE             # MIT License (Eduardo Cordova)
+├── assets/
+│   └── img/            # Comparison screenshots
 └── demo/
     ├── with-skill/     # Example generated with anti-generic-design
     │   ├── index.html
