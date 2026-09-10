@@ -12,7 +12,6 @@
       --font-display: 'Fraunces', serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
       
-      /* Duo Mode (Default) */
       --color-bg: #FAF7F2;
       --color-surface: #FFFFFF;
       --color-card: #F4EFE6;
@@ -27,7 +26,6 @@
       --transition-mode: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
     }
 
-    /* Dynamic Themes */
     body.mode-dogs {
       --color-bg: #FFF9F2;
       --color-surface: #FFFFFF;
@@ -70,41 +68,12 @@
       position: relative;
     }
 
-    /* Paw Trail on Click */
-    .paw-click {
-      position: fixed;
-      pointer-events: none;
-      width: 28px;
-      height: 28px;
-      transform: translate(-50%, -50%) scale(0.5);
-      opacity: 0.7;
-      animation: pawFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      z-index: 9999;
-      fill: var(--color-primary);
-    }
-
-    @keyframes pawFade {
-      0% {
-        transform: translate(-50%, -50%) scale(0.5) rotate(var(--rot, 0deg));
-        opacity: 0.8;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.1) rotate(var(--rot, 0deg));
-        opacity: 0.6;
-      }
-      100% {
-        transform: translate(-50%, -60px) scale(1) rotate(var(--rot, 0deg));
-        opacity: 0;
-      }
-    }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* Navbar */
     .navbar {
       position: sticky;
       top: 0;
@@ -136,7 +105,6 @@
       letter-spacing: -0.02em;
     }
 
-    /* Mode Switcher */
     .mode-switch-wrapper {
       display: flex;
       align-items: center;
@@ -169,7 +137,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       padding: 5rem 0 3rem;
@@ -211,62 +178,11 @@
       font-size: 1.2rem;
       color: var(--color-muted);
       max-width: 40rem;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 3.5rem;
       font-weight: 400;
       line-height: 1.7;
     }
 
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3.5rem;
-      flex-wrap: wrap;
-    }
-
-    .cta-primary {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      border: none;
-      padding: 0.95rem 2rem;
-      border-radius: 999px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 10px 24px var(--color-accent-glow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .cta-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px var(--color-accent-glow);
-    }
-
-    .cta-sound {
-      background: var(--color-surface);
-      color: var(--color-text);
-      border: 1px solid var(--border-subtle);
-      padding: 0.95rem 1.75rem;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease;
-    }
-
-    .cta-sound:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Hero Visual Card */
     .hero-visual-card {
       position: relative;
       border-radius: 28px;
@@ -296,7 +212,6 @@
       position: relative;
     }
 
-    /* Superpowers Section */
     .section-features {
       padding: 7rem 0 5rem;
     }
@@ -371,81 +286,6 @@
       line-height: 1.65;
     }
 
-    /* Secret Behavior Decoder */
-    .section-translator {
-      padding: 6rem 0;
-      background: var(--color-card);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .translator-box {
-      background: var(--color-surface);
-      border-radius: 24px;
-      padding: 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 20px 48px rgba(0,0,0,0.05);
-    }
-
-    .question-tabs {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-      justify-content: center;
-    }
-
-    .tab-pill {
-      background: var(--color-bg);
-      border: 1px solid var(--border-subtle);
-      color: var(--color-text);
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: 0.65rem 1.3rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .tab-pill.active {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      border-color: var(--color-primary);
-      box-shadow: 0 6px 16px var(--color-accent-glow);
-    }
-
-    .decoder-result {
-      background: var(--color-bg);
-      border-radius: 18px;
-      padding: 2.25rem;
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .decoder-emoji {
-      font-size: 3.5rem;
-      line-height: 1;
-      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-    }
-
-    .decoder-info h4 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--color-text);
-      margin-bottom: 0.4rem;
-    }
-
-    .decoder-info p {
-      color: var(--color-muted);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Personality Gallery */
     .section-gallery {
       padding: 7rem 0;
     }
@@ -537,7 +377,6 @@
       color: var(--color-text);
     }
 
-    /* Footer */
     .footer {
       background: var(--color-surface);
       border-top: 1px solid var(--border-subtle);
@@ -571,10 +410,6 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
-      .decoder-result {
-        flex-direction: column;
-        text-align: center;
-      }
       .nav-content {
         flex-direction: column;
         height: auto;
@@ -586,7 +421,6 @@
 </head>
 <body>
 
-  <!-- Top Navigation with Interactive Pet Switcher -->
   <nav class="navbar">
     <div class="container nav-content">
       <a href="#" class="brand-logo">
@@ -594,7 +428,6 @@
         <span class="brand-title">Paws & Whiskers</span>
       </a>
 
-      <!-- Mode Selector: Puppies / Kittens / Both -->
       <div class="mode-switch-wrapper" role="radiogroup" aria-label="Preferred pet selector">
         <button class="mode-btn active" data-mode="duo" aria-checked="true">
           <span>🐾</span> Both
@@ -609,7 +442,6 @@
     </div>
   </nav>
 
-  <!-- Dynamic Hero Section -->
   <header class="hero">
     <div class="container">
       <div class="hero-badge" id="heroBadge">
@@ -624,16 +456,6 @@
         Two complementary worlds bringing daily warmth, serene calm, and boundless affection to every home.
       </p>
 
-      <div class="hero-actions">
-        <a href="#decoder" class="cta-primary">
-          <span>💡</span> Decode their language
-        </a>
-        <button class="cta-sound" id="btnSound" aria-label="Play soothing purr sound">
-          <span id="soundIcon">🔊</span> <span id="soundText">Listen to relaxing purr</span>
-        </button>
-      </div>
-
-      <!-- Crossfade Interactive Visual Frame -->
       <div class="hero-visual-card">
         <img src="assets/duo.jpg" alt="Dog and cat resting peacefully together" class="active" id="imgDuo">
         <img src="assets/dog.jpg" alt="Illustrated portrait of a noble and loyal hound" id="imgDogs">
@@ -642,7 +464,6 @@
     </div>
   </header>
 
-  <!-- Superpowers Section -->
   <section class="section-features">
     <div class="container">
       <div class="section-header">
@@ -679,38 +500,6 @@
     </div>
   </section>
 
-  <!-- Secret Behavior Decoder -->
-  <section class="section-translator" id="decoder">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Secret Decoder</span>
-        <h2 class="section-heading">What is your pet telling you?</h2>
-        <p style="color: var(--color-muted);">Click any behavior below to discover its true instinctual meaning.</p>
-      </div>
-
-      <div class="translator-box">
-        <div class="question-tabs">
-          <button class="tab-pill active" data-behavior="knead">Cat: Making biscuits (kneading)</button>
-          <button class="tab-pill" data-behavior="sneeze">Dog: Playful sneezing</button>
-          <button class="tab-pill" data-behavior="tail-hook">Cat: Question-mark curved tail</button>
-          <button class="tab-pill" data-behavior="bow">Dog: Play bow with wagging tail</button>
-          <button class="tab-pill" data-behavior="slow-blink">Cat: Slow and steady blinking</button>
-        </div>
-
-        <div class="decoder-result" id="decoderResult">
-          <div class="decoder-emoji" id="decoderEmoji">🍞</div>
-          <div class="decoder-info">
-            <h4 id="decoderTitle">Making biscuits with front paws (Cat)</h4>
-            <p id="decoderText">
-              A comforting sensory memory from early nursing days. It signals absolute trust, profound contentment, and feeling deeply safe in your presence.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Personality Portraits -->
   <section class="section-gallery">
     <div class="container">
       <div class="section-header">
@@ -772,7 +561,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-brand">🐾 Paws & Whiskers</div>
@@ -786,75 +574,6 @@
   </footer>
 
   <script>
-    // Web Audio Synthesizer for Soothing Feline Purr
-    let audioCtx = null;
-    let isPlaying = false;
-    let purrNodes = [];
-
-    function togglePurrSound() {
-      const soundText = document.getElementById('soundText');
-      const soundIcon = document.getElementById('soundIcon');
-
-      if (isPlaying) {
-        stopPurr();
-        soundText.textContent = 'Listen to relaxing purr';
-        soundIcon.textContent = '🔊';
-        isPlaying = false;
-        return;
-      }
-
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      // Purr synthesis: dual oscillator with rhythmic low-frequency modulation
-      const osc = audioCtx.createOscillator();
-      const lfo = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      const lfoGain = audioCtx.createGain();
-      const filter = audioCtx.createBiquadFilter();
-
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(28, audioCtx.currentTime);
-
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(140, audioCtx.currentTime);
-
-      lfo.type = 'sine';
-      lfo.frequency.setValueAtTime(24, audioCtx.currentTime);
-      lfoGain.gain.setValueAtTime(0.5, audioCtx.currentTime);
-
-      lfo.connect(lfoGain);
-      lfoGain.connect(gain.gain);
-
-      gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      lfo.start();
-
-      purrNodes = [osc, lfo, gain, filter];
-      isPlaying = true;
-      soundText.textContent = 'Pause purr';
-      soundIcon.textContent = '⏸️';
-    }
-
-    function stopPurr() {
-      purrNodes.forEach(node => {
-        try { node.stop ? node.stop() : node.disconnect(); } catch (e) {}
-      });
-      purrNodes = [];
-    }
-
-    document.getElementById('btnSound').addEventListener('click', togglePurrSound);
-
-    // Interactive Mode Switcher (Puppies / Kittens / Both)
     const modeButtons = document.querySelectorAll('.mode-btn');
     const heroTitle = document.getElementById('heroTitle');
     const heroSubtitle = document.getElementById('heroSubtitle');
@@ -895,96 +614,19 @@
         btn.classList.add('active');
         btn.setAttribute('aria-checked', 'true');
 
-        // Update body theme classes
         document.body.className = '';
         if (mode !== 'duo') {
           document.body.classList.add(`mode-${mode}`);
         }
 
-        // Update hero copy
         const cfg = modeContent[mode];
         heroBadge.innerHTML = cfg.badge;
         heroTitle.innerHTML = cfg.title;
         heroSubtitle.textContent = cfg.subtitle;
 
-        // Image crossfade
         [imgDuo, imgDogs, imgCats].forEach(img => img.classList.remove('active'));
         cfg.imgActive.classList.add('active');
       });
-    });
-
-    // Instinctual Behavior Decoder
-    const behaviors = {
-      knead: {
-        emoji: '🍞',
-        title: 'Making biscuits with front paws (Cat)',
-        desc: 'A comforting sensory memory from early nursing days. It signals absolute trust, profound contentment, and feeling deeply safe in your presence.'
-      },
-      sneeze: {
-        emoji: '🐕',
-        title: 'Playful sneezing during games (Dog)',
-        desc: 'A communicative calming signal. Your dog is saying: "We are having the best time, this is purely fun, and I have zero aggressive intent!"'
-      },
-      'tail-hook': {
-        emoji: '🐈',
-        title: 'Question-mark curved upright tail (Cat)',
-        desc: 'The ultimate feline greeting. It signals cheerful curiosity, an open invitation to interact, and warm friendly affection.'
-      },
-      bow: {
-        emoji: '🎾',
-        title: 'Play bow with chest down and tail high (Dog)',
-        desc: 'The universal canine invitation to fun. Your dog is brimming with cheerful energy and inviting you to sprint, fetch, and play.'
-      },
-      'slow-blink': {
-        emoji: '👁️',
-        title: 'Slow and steady blinking (Cat)',
-        desc: 'Known affectionately as the "feline kiss." Closing eyes slowly in front of you expresses complete vulnerability and unwavering trust.'
-      }
-    };
-
-    const tabPills = document.querySelectorAll('.tab-pill');
-    const decoderEmoji = document.getElementById('decoderEmoji');
-    const decoderTitle = document.getElementById('decoderTitle');
-    const decoderText = document.getElementById('decoderText');
-
-    tabPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        tabPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-
-        const key = pill.dataset.behavior;
-        const item = behaviors[key];
-        
-        decoderEmoji.textContent = item.emoji;
-        decoderTitle.textContent = item.title;
-        decoderText.textContent = item.desc;
-      });
-    });
-
-    // Floating Paw-prints on click anywhere
-    document.addEventListener('click', (e) => {
-      if (e.target.closest('button, a')) return;
-
-      const paw = document.createElement('div');
-      paw.className = 'paw-click';
-      paw.style.left = `${e.clientX}px`;
-      paw.style.top = `${e.clientY}px`;
-      
-      const randomRot = Math.floor(Math.random() * 60) - 30;
-      paw.style.setProperty('--rot', `${randomRot}deg`);
-
-      paw.innerHTML = `
-        <svg viewBox="0 0 24 24">
-          <circle cx="7.5" cy="5.5" r="2.5"/>
-          <circle cx="16.5" cy="5.5" r="2.5"/>
-          <circle cx="3.5" cy="11.5" r="2.2"/>
-          <circle cx="20.5" cy="11.5" r="2.2"/>
-          <path d="M12 11.5c-3.2 0-6 2.2-6 5.5 0 2.2 2 4 4.5 4 1 0 1.2-.5 1.5-.5s.5.5 1.5.5c2.5 0 4.5-1.8 4.5-4 0-3.3-2.8-5.5-6-5.5z"/>
-        </svg>
-      `;
-
-      document.body.appendChild(paw);
-      setTimeout(() => paw.remove(), 800);
     });
   </script>
 </body>
