@@ -3,7 +3,7 @@ name: anti-generic-design
 description: Universal rules to eliminate AI web design clichés (no brackets, no double slashes, no floating dots, no fake HUDs/telemetry, no left border bars, no icon spam) and enforce editorial UI with concise, non-generic, decoration-free code comments.
 category: frontend
 tags: [design, ui-ux, clean-code, frontend, anti-ai-cliches, accessibility]
-tools: [antigravity, cursor, claude, codex]
+tools: [claude, cursor, codex, copilot, windsurf, aider, antigravity]
 ---
 
 # THE ANTI-GENERIC GUIDE: EDITORIAL WEB DESIGN & CLEAN CODE

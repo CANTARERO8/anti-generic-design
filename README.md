@@ -48,23 +48,58 @@ Large Language Models (LLMs) share predictable defaults when generating web inte
 * Zero inaccessible div-soup: strict use of native semantic elements (`<button>`, `aria-label`, descriptive `alt` tags).
 * **Single-line surgical comments:** Concise explanations strictly addressing the non-obvious "why".
 
----
+## Universal Compatibility & Setup
 
-## Installation
+This skill is 100% platform-agnostic. You can load or inject `SKILL.md` into any AI coding assistant, agentic workflow, or LLM system prompt to instantly enforce clean editorial UI and eliminate generic code habits.
+
+### Claude Code & Anthropic Claude
+Add the contents of `SKILL.md` to your root `CLAUDE.md` or import it in your project instructions:
+
+```bash
+cat SKILL.md >> CLAUDE.md
+```
+
+### Cursor
+Add or reference `SKILL.md` in your project's `.cursorrules` or inside `.cursor/rules/anti-generic.mdc`:
+
+```bash
+mkdir -p .cursor/rules
+cp SKILL.md .cursor/rules/anti-generic.mdc
+```
+
+### Codex & OpenAI
+Include `SKILL.md` directly in your custom system instructions, GPT profile, or project knowledge files.
+
+### GitHub Copilot
+Add this file to your repository's Copilot instructions:
+
+```bash
+mkdir -p .github
+cp SKILL.md .github/copilot-instructions.md
+```
+
+### Windsurf (Codeium)
+Add `SKILL.md` to your `.windsurfrules` file in the workspace root:
+
+```bash
+cp SKILL.md .windsurfrules
+```
+
+### Aider, Continue.dev & Roo Code
+- **Aider:** Run `aider --read SKILL.md` or add `read: [SKILL.md]` to your `.aider.conf.yml`.
+- **Continue.dev:** Add `SKILL.md` as a custom slash command or context provider in `config.json`.
+- **Roo Code / Cline:** Paste `SKILL.md` into your custom instructions or workspace prompt rules.
 
 ### Google Antigravity
-Clone or copy `SKILL.md` into your Antigravity skills directory:
+Copy `SKILL.md` into your Antigravity skills configuration directory:
 
 ```bash
 mkdir -p ~/.gemini/config/skills/anti-generic-design
 cp SKILL.md ~/.gemini/config/skills/anti-generic-design/
 ```
 
-### Cursor
-Add or reference `SKILL.md` directly in your project's `.cursorrules` or workspace rules.
-
-### Claude Code / Codex
-Include the contents of `SKILL.md` in your `CLAUDE.md` or system instructions to enforce editorial UI and clean code output across all sessions.
+### Any Other LLM / Autonomous Agent
+Simply paste the contents of `SKILL.md` as part of the initial system prompt or reference it during prompt orchestration.
 
 ---
 
