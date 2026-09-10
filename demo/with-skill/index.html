@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canes y Felinos | Registro de Adopción y Fichas Biológicas</title>
+  <title>Canine & Feline Habitat | Adoption Registry & Biological Profiles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,12 +13,12 @@
   <header class="header-bar">
     <div class="header-inner">
       <div class="brand">
-        <span class="brand-title">Canes y Felinos</span>
-        <span class="brand-subtitle">Registro de bienestar animal y acogida responsable</span>
+        <span class="brand-title">Canine &amp; Feline Sanctuary</span>
+        <span class="brand-subtitle">Animal welfare registry and conscious fostering</span>
       </div>
       <div class="header-actions">
-        <button id="sound-toggle" class="sound-button" aria-pressed="false" aria-label="Activar o desactivar sonido de interfaz">
-          <span id="sound-text">Sonido desactivado</span>
+        <button id="sound-toggle" class="sound-button" aria-pressed="false" aria-label="Toggle interface audio feedback">
+          <span id="sound-text">Sound disabled</span>
         </button>
       </div>
     </div>
@@ -27,25 +27,25 @@
   <main class="page-container">
     <section class="hero-module">
       <div class="hero-text-block">
-        <span class="meta-label">Protocolo de acogida 2026</span>
-        <h1 class="hero-headline">Evaluación biométrica y adopción consciente de cachorros y felinos</h1>
+        <span class="meta-label">Adoption Protocol 2026</span>
+        <h1 class="hero-headline">Biometric assessment and conscious adoption of puppies and felines</h1>
         <p class="hero-lead">
-          Monitoreo veterinario continuo, registro etológico y diagnóstico de compatibilidad habitacional para animales rescatados en proceso de inserción familiar.
+          Continuous veterinary monitoring, ethological profiling, and residential compatibility assessments for rescued animals transitioning into permanent homes.
         </p>
       </div>
 
       <div class="metrics-strip">
         <div class="metric-cell">
           <span class="metric-number">08</span>
-          <span class="metric-caption">Animales en evaluación activa</span>
+          <span class="metric-caption">Animals under active evaluation</span>
         </div>
         <div class="metric-cell">
           <span class="metric-number">100%</span>
-          <span class="metric-caption">Esquema de vacunación al día</span>
+          <span class="metric-caption">Vaccination schedules up to date</span>
         </div>
         <div class="metric-cell">
           <span class="metric-number">04</span>
-          <span class="metric-caption">Criterios etológicos verificados</span>
+          <span class="metric-caption">Verified behavioral criteria</span>
         </div>
       </div>
     </section>
@@ -53,35 +53,35 @@
     <section class="catalog-section">
       <div class="controls-toolbar">
         <div class="search-wrap">
-          <label for="catalog-search" class="visually-hidden">Buscar ejemplares por nombre, raza o carácter</label>
-          <input type="search" id="catalog-search" placeholder="Filtrar por nombre, raza o comportamiento..." autocomplete="off">
+          <label for="catalog-search" class="visually-hidden">Search records by name, breed, or temperament</label>
+          <input type="search" id="catalog-search" placeholder="Filter by name, breed, or behavior..." autocomplete="off">
         </div>
 
-        <nav class="filter-nav" aria-label="Filtrar ejemplares por categoría">
-          <button class="filter-tab is-active" data-group="all">Todos los registros</button>
-          <button class="filter-tab" data-group="canino">Caninos</button>
-          <button class="filter-tab" data-group="felino">Felinos</button>
-          <button class="filter-tab" data-group="departamento">Aptos para departamento</button>
+        <nav class="filter-nav" aria-label="Filter records by category">
+          <button class="filter-tab is-active" data-group="all">All records</button>
+          <button class="filter-tab" data-group="canino">Canines</button>
+          <button class="filter-tab" data-group="felino">Felines</button>
+          <button class="filter-tab" data-group="departamento">Apartment suitable</button>
         </nav>
       </div>
 
       <div class="status-summary" aria-live="polite">
-        <span id="counter-label">Registros cargados</span>
+        <span id="counter-label">Records loaded</span>
       </div>
 
       <div id="catalog-grid" class="catalog-grid">
-        <!-- Renderizado dinámico desde app.js -->
+        <!-- Rendered dynamically via app.js -->
       </div>
     </section>
 
     <section class="facts-section">
       <div class="facts-panel">
         <div class="facts-header">
-          <span class="meta-label">Fisiología y etología comparada</span>
-          <button id="next-fact-trigger" class="action-link">Consultar siguiente registro</button>
+          <span class="meta-label">Comparative Physiology &amp; Ethology</span>
+          <button id="next-fact-trigger" class="action-link">View next clinical record</button>
         </div>
         <blockquote id="fact-display" class="fact-quote">
-          Cargando observaciones clínicas y de comportamiento...
+          Loading clinical observations and behavioral notes...
         </blockquote>
       </div>
     </section>
@@ -89,17 +89,17 @@
 
   <dialog id="spec-modal" class="detail-dialog" aria-labelledby="dialog-title">
     <div class="dialog-frame">
-      <button id="dialog-close" class="close-trigger" aria-label="Cerrar ficha clínica">Cerrar</button>
+      <button id="dialog-close" class="close-trigger" aria-label="Close clinical file">Close</button>
       <div id="dialog-content" class="dialog-body">
-        <!-- Contenido inyectado dinámicamente -->
+        <!-- Injected dynamically -->
       </div>
     </div>
   </dialog>
 
   <footer class="footer-bar">
     <div class="footer-inner">
-      <p>Centro de Evaluación y Acogida Canina y Felina</p>
-      <p class="footer-note">Programa permanente de esterilización, vacunación antirrábica y microchip de identificación oficial.</p>
+      <p>Center for Canine and Feline Clinical Evaluation &amp; Adoption</p>
+      <p class="footer-note">Permanent program for sterilization, rabies vaccination, and official identification microchipping.</p>
     </div>
   </footer>
 

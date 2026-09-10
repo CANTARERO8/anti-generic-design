@@ -4,104 +4,104 @@ const specimens = [
     name: 'Balto',
     category: 'canino',
     breed: 'Golden Retriever',
-    age: '4 meses',
+    age: '4 months',
     estimatedWeight: '11.5 kg',
-    habitatFit: 'Casa con jardín o paseos frecuentes',
+    habitatFit: 'House with yard or frequent outdoor walks',
     aptApartment: false,
-    vaccineStatus: 'Completo para la edad',
-    energyIndex: 'Medio-alto',
-    temperament: 'Sociable con congéneres y personas',
-    summary: 'Cachorro en etapa formativa con alta respuesta a estímulos positivos y disposición para rutinas de juego estructuradas.',
+    vaccineStatus: 'Complete for developmental age',
+    energyIndex: 'Medium-high',
+    temperament: 'Highly sociable with dogs and people',
+    summary: 'Juvenile dog in formative development demonstrating strong response to positive reinforcement and eagerness for structured play routines.',
     imageUrl: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'fel-01',
     name: 'Luna',
     category: 'felino',
-    breed: 'Siamés mestizo',
-    age: '3 meses',
+    breed: 'Crossbred Siamese',
+    age: '3 months',
     estimatedWeight: '1.4 kg',
-    habitatFit: 'Departamento o interiores seguros',
+    habitatFit: 'Apartment or secured indoor spaces',
     aptApartment: true,
-    vaccineStatus: 'Triple felina iniciada',
-    energyIndex: 'Moderado',
-    temperament: 'Curiosa, observadora y vocal',
-    summary: 'Ejemplar juvenil adaptado a espacios verticales y rascadores. Muestra tolerancia a estímulos domésticos habituales.',
+    vaccineStatus: 'Feline core series initiated',
+    energyIndex: 'Moderate',
+    temperament: 'Curious, attentive, and vocal',
+    summary: 'Juvenile feline well adapted to vertical wall perches and scratching trees. Displays calm tolerance to standard domestic stimuli.',
     imageUrl: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'can-02',
     name: 'Milo',
     category: 'canino',
-    breed: 'Corgi Galés',
-    age: '5 meses',
+    breed: 'Pembroke Welsh Corgi',
+    age: '5 months',
     estimatedWeight: '7.8 kg',
-    habitatFit: 'Departamento amplio o casa',
+    habitatFit: 'Spacious apartment or house',
     aptApartment: true,
-    vaccineStatus: 'Completo con refuerzo sérico',
-    energyIndex: 'Medio',
-    temperament: 'Atento, vivaz y receptivo',
-    summary: 'Responde con rapidez a comandos básicos de obediencia. Muestra temperamento estable en paseos con correa.',
+    vaccineStatus: 'Complete with serological booster',
+    energyIndex: 'Medium',
+    temperament: 'Alert, spirited, and receptive',
+    summary: 'Responds promptly to foundational obedience cues. Displays even temperament during leash-guided neighborhood walks.',
     imageUrl: 'https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'fel-02',
     name: 'Oliver',
     category: 'felino',
-    breed: 'Común europeo',
-    age: '2 meses',
+    breed: 'European Shorthair',
+    age: '2 months',
     estimatedWeight: '1.1 kg',
-    habitatFit: 'Departamento con mallas de protección',
+    habitatFit: 'Apartment with window safety screens',
     aptApartment: true,
-    vaccineStatus: 'Desparasitado y primera dosis',
-    energyIndex: 'Tranquilo',
-    temperament: 'Afectuoso en reposo y dócil',
-    summary: 'Hábitos de higiene consolidados en arenero. Busca proximidad constante durante periodos de descanso.',
+    vaccineStatus: 'Dewormed and initial vaccine administered',
+    energyIndex: 'Calm',
+    temperament: 'Affectionate when resting and docile',
+    summary: 'Consolidated litter-box hygiene habits. Actively seeks physical proximity during scheduled quiet rest intervals.',
     imageUrl: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'can-03',
     name: 'Bruno',
     category: 'canino',
-    breed: 'Bulldog Francés',
-    age: '6 meses',
+    breed: 'French Bulldog',
+    age: '6 months',
     estimatedWeight: '9.2 kg',
-    habitatFit: 'Departamento sin exposición a calor extremo',
+    habitatFit: 'Apartment without excessive heat exposure',
     aptApartment: true,
-    vaccineStatus: 'Completo con registro de microchip',
-    energyIndex: 'Bajo-moderado',
-    temperament: 'Calmo, apegado y silencioso',
-    summary: 'Estructura braquicefálica con requerimiento de paseos cortos y control de temperatura ambiental.',
+    vaccineStatus: 'Complete with official microchip registry',
+    energyIndex: 'Low-moderate',
+    temperament: 'Quiet, bonded, and tranquil',
+    summary: 'Brachycephalic profile requiring monitored short walks and moderate indoor thermal regulation.',
     imageUrl: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'fel-03',
-    name: 'Nieve',
+    name: 'Snow',
     category: 'felino',
-    breed: 'Angora mestizo',
-    age: '3 meses',
+    breed: 'Crossbred Angora',
+    age: '3.5 months',
     estimatedWeight: '1.5 kg',
-    habitatFit: 'Interiores con rutina de cepillado',
+    habitatFit: 'Indoors with daily brushing routine',
     aptApartment: true,
-    vaccineStatus: 'Triple felina y leucemia negativa',
-    energyIndex: 'Moderado',
-    temperament: 'Sensible y de interacción suave',
-    summary: 'Pelaje semilargo que exige mantenimiento regular. Convive favorablemente con otros felinos evaluados.',
+    vaccineStatus: 'Core series complete and FeLV negative',
+    energyIndex: 'Moderate',
+    temperament: 'Sensitive and gentle in handling',
+    summary: 'Semi-long coat requiring regular grooming. Coexists favorably with evaluated companion felines in common quarters.',
     imageUrl: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'can-04',
     name: 'Maya',
     category: 'canino',
-    breed: 'Husky Siberiano',
-    age: '4 meses',
+    breed: 'Siberian Husky',
+    age: '4 months',
     estimatedWeight: '10.8 kg',
-    habitatFit: 'Hogar con patio cerrado o tutores activos',
+    habitatFit: 'Secure fenced yard or athletic guardians',
     aptApartment: false,
-    vaccineStatus: 'Completo y desparasitación al día',
-    energyIndex: 'Alto',
-    temperament: 'Enérgica, exploradora y comunicativa',
-    summary: 'Demanda enriquecimiento ambiental continuo y actividades de olfato para canalizar su nivel de actividad biológica.',
+    vaccineStatus: 'Complete and up to date',
+    energyIndex: 'High',
+    temperament: 'Energetic, exploratory, and communicative',
+    summary: 'Demands continuous environmental enrichment and scent games to channel high biological stamina constructively.',
     imageUrl: 'https://images.unsplash.com/photo-1593134257782-e89567b7718a?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -109,25 +109,25 @@ const specimens = [
     name: 'Mochi',
     category: 'felino',
     breed: 'British Shorthair',
-    age: '5 meses',
+    age: '5 months',
     estimatedWeight: '2.3 kg',
-    habitatFit: 'Departamento o casa con ambiente tranquilo',
+    habitatFit: 'Apartment or house with quiet routine',
     aptApartment: true,
-    vaccineStatus: 'Completo con control veterinario',
-    energyIndex: 'Bajo',
-    temperament: 'Independiente, tolerante y sereno',
-    summary: 'Carácter estable y predecible. Ideal para personas con esquemas de trabajo remoto o ritmos domésticos calmos.',
+    vaccineStatus: 'Complete under veterinary control',
+    energyIndex: 'Low',
+    temperament: 'Independent, patient, and serene',
+    summary: 'Predictable and composed disposition. Well-suited for quiet home environments and remote-work schedules.',
     imageUrl: 'https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
 const clinicalFacts = [
-  'El olfato canino cuenta con hasta 300 millones de receptores olfativos, frente a los 6 millones presentes en el ser humano.',
-  'La frecuencia respiratoria normal en felinos en reposo oscila entre 20 y 30 respiraciones por minuto.',
-  'El periodo de socialización sensible en cachorros transcurre de forma crítica entre las 3 y las 14 semanas de desarrollo.',
-  'Los felinos carecen de papilas gustativas para receptores de dulzor debido a una mutación fijada en el gen Tas1r2.',
-  'La esterilización temprana previene de manera estadísticamente significativa patologías uterinas y neoplasias mamarias en hembras.',
-  'El marcaje facial en gatos deposita feromonas de la fracción F3 con efecto apaciguador sobre su percepción del entorno territorial.'
+  'Canine olfaction features up to 300 million olfactory receptors, compared to approximately 6 million in humans.',
+  'Resting respiratory rates in healthy adult felines typically range between 20 and 30 breaths per minute.',
+  'The primary socialization window in puppies develops critically between 3 and 14 weeks of age.',
+  'Felines lack functional sweet taste receptors due to a permanent deletion mutation in the Tas1r2 gene.',
+  'Early surgical sterilization statistically lowers the incidence of uterine pathologies and mammary neoplasia.',
+  'Facial rubbing in felines deposits F3 facial pheromone fractions that provide self-soothing spatial familiarization.'
 ];
 
 let activeFilter = 'all';
@@ -203,13 +203,13 @@ function updateCatalogView() {
     return true;
   });
 
-  counterLabel.textContent = `${filtered.length} de ${specimens.length} registros corresponden a los parámetros aplicados`;
+  counterLabel.textContent = `${filtered.length} of ${specimens.length} records match applied criteria`;
 
   if (filtered.length === 0) {
     catalogGrid.innerHTML = `
       <div class="empty-state">
-        <strong>Sin coincidencias registradas</strong>
-        <p>No se localizaron registros bajo los términos o filtros seleccionados.</p>
+        <strong>No matching records found</strong>
+        <p>No animal files correspond to the specified search terms or applied filters.</p>
       </div>
     `;
     return;
@@ -218,8 +218,8 @@ function updateCatalogView() {
   catalogGrid.innerHTML = filtered.map(item => `
     <article class="card-item" data-id="${item.id}">
       <div class="card-media">
-        <img src="${item.imageUrl}" alt="Fotografía clínica de ${item.name}, raza ${item.breed}" loading="lazy">
-        <span class="card-taxonomy">${item.category === 'canino' ? 'Canino' : 'Felino'}</span>
+        <img src="${item.imageUrl}" alt="Clinical profile photograph of ${item.name}, breed ${item.breed}" loading="lazy">
+        <span class="card-taxonomy">${item.category === 'canino' ? 'Canine' : 'Feline'}</span>
       </div>
       <div class="card-content">
         <div class="card-heading-row">
@@ -230,21 +230,21 @@ function updateCatalogView() {
 
         <ul class="spec-list">
           <li class="spec-entry">
-            <span class="spec-name">Peso estimado</span>
+            <span class="spec-name">Estimated weight</span>
             <span class="spec-value">${item.estimatedWeight}</span>
           </li>
           <li class="spec-entry">
-            <span class="spec-name">Aptitud habitacional</span>
-            <span class="spec-value">${item.aptApartment ? 'Apto departamento' : 'Requiere jardín'}</span>
+            <span class="spec-name">Housing suitability</span>
+            <span class="spec-value">${item.aptApartment ? 'Apartment suitable' : 'Requires yard'}</span>
           </li>
           <li class="spec-entry">
-            <span class="spec-name">Esquema sanitario</span>
+            <span class="spec-name">Health protocol</span>
             <span class="spec-value">${item.vaccineStatus}</span>
           </li>
         </ul>
 
         <div class="card-actions">
-          <button class="record-btn" data-trigger="inspect" data-id="${item.id}">Consultar ficha técnica</button>
+          <button class="record-btn" data-trigger="inspect" data-id="${item.id}">Inspect clinical profile</button>
         </div>
       </div>
     </article>
@@ -256,7 +256,7 @@ function displaySpecimenDetail(id) {
   if (!item) return;
 
   dialogContent.innerHTML = `
-    <img src="${item.imageUrl}" alt="Ficha ampliada de ${item.name}" class="dialog-image">
+    <img src="${item.imageUrl}" alt="Full profile of ${item.name}" class="dialog-image">
     <div class="dialog-inner-body">
       <div class="dialog-title-group">
         <h2 id="dialog-title" class="dialog-title">${item.name}</h2>
@@ -267,24 +267,24 @@ function displaySpecimenDetail(id) {
 
       <div class="assessment-grid">
         <div class="assessment-item">
-          <span class="assessment-label">Espacio recomendado</span>
+          <span class="assessment-label">Recommended environment</span>
           <span class="assessment-value">${item.habitatFit}</span>
         </div>
         <div class="assessment-item">
-          <span class="assessment-label">Nivel de energía</span>
+          <span class="assessment-label">Energy index</span>
           <span class="assessment-value">${item.energyIndex}</span>
         </div>
         <div class="assessment-item">
-          <span class="assessment-label">Temperamento evaluado</span>
+          <span class="assessment-label">Evaluated temperament</span>
           <span class="assessment-value">${item.temperament}</span>
         </div>
         <div class="assessment-item">
-          <span class="assessment-label">Estado de vacunación</span>
+          <span class="assessment-label">Vaccination status</span>
           <span class="assessment-value">${item.vaccineStatus}</span>
         </div>
       </div>
 
-      <button id="inquire-btn" class="dialog-primary-action">Iniciar solicitud de entrevista para acogida</button>
+      <button id="inquire-btn" class="dialog-primary-action">Submit fostering interview request</button>
     </div>
   `;
 
@@ -293,7 +293,7 @@ function displaySpecimenDetail(id) {
 
   document.getElementById('inquire-btn').addEventListener('click', () => {
     emitFeedbackTone(680, 0.12);
-    alert(`Se ha registrado tu solicitud para el ejemplar ${item.name}. Un médico veterinario del centro coordinará la entrevista de validación etológica.`);
+    alert(`Your fostering request for ${item.name} has been recorded. A staff veterinarian will coordinate your ethological consultation.`);
   });
 }
 
@@ -344,7 +344,7 @@ nextFactTrigger.addEventListener('click', () => {
 soundToggle.addEventListener('click', () => {
   isSoundActive = !isSoundActive;
   soundToggle.setAttribute('aria-pressed', isSoundActive ? 'true' : 'false');
-  soundText.textContent = isSoundActive ? 'Sonido activado' : 'Sonido desactivado';
+  soundText.textContent = isSoundActive ? 'Sound enabled' : 'Sound disabled';
   if (isSoundActive) {
     initAudioSystem();
     emitFeedbackTone(600, 0.1);
